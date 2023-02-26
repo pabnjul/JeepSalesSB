@@ -2,6 +2,7 @@ package com.promineotech.jeep.controller;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import java.math.BigDecimal;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import org.junit.jupiter.api.Test;
@@ -57,9 +58,11 @@ class FetchJeepTest {
     assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
 
     // AND: the actual list returned is the same as the expected list
+    List<Jeep> actual = response.getBody();
     List<Jeep> expected = buildExpected();
 
-    assertThat(response.getBody()).isEqualTo(expected);
+
+    assertThat(actual).isEqualTo(expected);
 
   }
 
@@ -84,7 +87,7 @@ class FetchJeepTest {
     .basePrice(new BigDecimal("31975.00"))
     .build());
     //@formatter:on
-
+     Collections.sort(list);
     return list;
 
   }
