@@ -32,6 +32,14 @@
       <artifactId>lombok</artifactId>
       <optional>true</optional>
     </dependency>
+    <!-- Bean validation ============================== -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-validation</artifactId>
+    </dependency>
+
+    
+    
     <!-- OpenAPI dependency ======================== -->
     <!-- https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-ui -->
     <dependency>
